@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+    
+            }
+
+        
+
+        body {
+            
+            color: #1b5e20;
+    font-family: Arial, sans-serif;
+    background-image: url("home2.jpeg");
+    background-repeat: repeat-x; /* Repeat only horizontally */
+  background-size: calc(100vw / 3) calc((100vw / 3) * (842 / 474));
+  background-position: top left; 
+   
+    color: #1b5e20;
+        }
+
+        .navbar {
+            background-color: #344e41;
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+
+        .menu-toggle {
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            margin-top: 60px;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #dad7cd;
+            height: calc(100vh - 60px);
+            position: fixed;
+            padding: 1rem;
+            transform: translateX(-250px);
+            transition: transform 0.3s ease;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        .sidebar.active {
+            transform: translateX(0);
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            color: #333d29;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-link i {
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .sidebar-link:hover {
+            background-color: #81c784;
+        }
+
+        .main-content {
+            margin-left: 0;
+            padding: 2rem;
+            width: 100%;
+            transition: margin-left 0.3s ease;
+         
+        }
+
+        .main-content.shifted {
+            margin-left: 250px;
+        }
+
+        .post {
+            background-color: #b5c99a;
+            opacity : 0.8;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .post-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #81c784;
+            margin-right: 10px;
+        }
+
+        .post-content {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            border-left: 3px solid #6c584c;
+            padding-left: 1rem;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 1rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        .action-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            color: #1b5e20;
+        }
+
+        .action-button:hover {
+            color: #31572c;
+        }
+
+        .profile-section {
+            display: none;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #132a13;
+            margin-right: 1rem;
+        }
+
+        .profile-info h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-posts {
+            margin-top: 2rem;
+        }
+
+        .date-badge {
+            background-color: #31572c;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+      .chatbot-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            font-size: 2rem;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+            z-index: 999; /* Ensure it's always on top */
+        }
+
+        .chatbot-icon:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="menu-toggle" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="logo">let's Talk</div>
+        <div></div>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <a href="#" class="sidebar-link" onclick="showHome()">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="post.html" class="sidebar-link">
+                <i class="fas fa-plus"></i> Create Post
+            </a>
+            <a href="#" class="sidebar-link" onclick="showProfile()">
+                <i class="fas fa-user"></i> Profile
+            </a>
+        </div>
+
+        <div class="main-content" id="mainContent">
+            <div id="posts-section">
+                <div class="post">
+                    <div class="post-header">
+                        <div class="post-avatar"></div>
+                        <div>
+                            <div class="author">John Doe</div>
+                            <div class="date-badge">February 8, 2025</div>
+                        </div>
+                    </div>
+                    <div class="post-content" style="color:black">
+                        Dear Diary, today was an amazing day! I finally completed my first web development project. 
+                        The feeling of accomplishment is indescribable. Looking forward to more coding adventures!
+                    </div>
+                    <div class="post-actions">
+                        <button class="action-button" onclick="handleLike(this)" style="color:red">
+                            <i class="far fa-heart"></i>
+                            <span>Like</span>
+                        </button>
+                        <button class="action-button" onclick="handleComment(this)" style="color:red">
+                            <i class="far fa-comment"></i>
+                            <span>Comment</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="profile-section" class="profile-section">
+                <div class="profile-header">
+                    <div class="profile-avatar"></div>
+                    <div class="profile-info">
+                        <h2>John Doe</h2>
+                        <p>Joined: January 2025</p>
+                    </div>
+                </div>
+                <div class="profile-posts">
+                    <h3>My Posts</h3>
+                    <!-- Profile posts will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Chatbot Icon -->
+    <a href="tbot.html">
+        <div class="chatbot-icon">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+    </a>
+
+
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.querySelector('.main-content');
+            sidebar.classList.toggle('active');
+            mainContent.classList.toggle('shifted');
+        }
+
+        function handleLike(button) {
+            button.classList.toggle('liked');
+            const icon = button.querySelector('i');
+            icon.classList.toggle('far');
+            icon.classList.toggle('fas');
+            icon.style.color = icon.classList.contains('fas') ? '#4267B2' : '#65676b';
+        }
+
+        function handleComment(button) {
+            const post = button.closest('.post');
+            const existingComments = post.querySelector('.comments');
+            
+            if (!existingComments) {
+                const commentsSection = document.createElement('div');
+                commentsSection.className = 'comments';
+                commentsSection.innerHTML = `
+                    <div style="margin-top: 1rem;">
+                        <textarea placeholder="Write a comment..." 
+                                  style="width: 100%; padding: 0.5rem; border-radius: 4px; border: 1px solid #ddd;">
+                        </textarea>
+                        <button style="margin-top: 0.5rem; padding: 0.5rem 1rem; background: #4267B2; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                            Post Comment
+                        </button>
+                    </div>
+                `;
+                post.appendChild(commentsSection);
+            }
+        }
+
+        function showProfile() {
+            document.getElementById('posts-section').style.display = 'none';
+            document.getElementById('profile-section').style.display = 'block';
+        }
+
+        function showHome() {
+            document.getElementById('posts-section').style.display = 'block';
+            document.getElementById('profile-section').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

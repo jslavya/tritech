@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Your CSS styles here (as provided in the paste.txt file) */
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="menu-toggle" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="logo">Social Platform</div>
+        <div></div>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <a href="#" class="sidebar-link" onclick="showHome()">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="post.html" class="sidebar-link">
+                <i class="fas fa-plus"></i> Create Post
+            </a>
+            <a href="#" class="sidebar-link" onclick="showProfile()">
+                <i class="fas fa-user"></i> Profile
+            </a>
+        </div>
+
+        <div class="main-content" id="mainContent">
+            <div id="posts-section">
+                <div class="post">
+                    <div class="post-header">
+                        <div class="post-avatar"></div>
+                        <div>
+                            <div class="author">John Doe</div>
+                            <div class="date-badge">February 8, 2025</div>
+                        </div>
+                    </div>
+                    <div class="post-content" style="color:black">
+                        Dear Diary, today was an amazing day! I finally completed my first web development project.
+                        The feeling of accomplishment is indescribable. Looking forward to more coding adventures!
+                    </div>
+                    <div class="post-actions">
+                        <button class="action-button" onclick="handleLike(this)" style="color:red">
+                            <i class="far fa-heart"></i>
+                            <span>Like</span>
+                        </button>
+                        <button class="action-button" onclick="handleComment(this)" style="color:red">
+                            <i class="far fa-comment"></i>
+                            <span>Comment</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="profile-section" class="profile-section">
+                <div class="profile-header">
+                    <div class="profile-avatar"></div>
+                    <div class="profile-info">
+                        <h2>John Doe</h2>
+                        <p>Joined: January 2025</p>
+                    </div>
+                </div>
+                <div class="profile-posts">
+                    <h3>My Posts</h3>
+                    <!-- Profile posts will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Icon -->
+    <a href="chatbot.html">
+        <div class="chatbot-icon">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+    </a>
+
+    <script>
+        /* Your JavaScript functions here (as provided in the paste.txt file) */
+    </script>
+</body>
+</html>

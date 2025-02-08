@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-image: url("sign2.jpeg");
+    background-size: cover; /* This ensures the image covers the entire background */
+    background-position: center; /* This centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: scroll; /* Optional: This keeps the background image fixed while scrolling */
+    height: 100vh; /* Sets the body height to full viewport height */
+    margin: 0;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container {
+    width: 400px;
+    background-color:rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.header h1 {
+    font-size: 24px;
+    color: #fff;
+}
+
+.header nav {
+    margin-top: 10px;
+}
+
+.header nav a {
+    color: #fff;
+    margin-right: 20px;
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.header nav a:hover {
+    opacity: 1;
+}
+
+.form {
+    margin-top: 30px;
+}
+
+.form h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #c7bbbb;
+}
+
+.form p {
+    margin-bottom: 20px;
+    color: #868AAE;
+}
+
+.login-text a {
+    color: #c81c47;
+    text-decoration: none;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+.input-box {
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444A59;
+    border-radius: 8px;
+    background-color:  rgb(214, 203, 203);
+    color: #fff;
+}
+
+.input-box input:focus {
+    outline:none;
+    border-color: #6f6fd2;
+    border-radius: 15px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color:  #ff5c5c;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #ff4a4a;
+}
+
+.change-method {
+    width: 100%;
+    padding: 12px;
+    background-color: #5C6274;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.change-method:hover {
+    background-color: #4A4E5C;
+}
