@@ -10,7 +10,7 @@
 - **Najiya T.P** - Government Engineering College, Kozhikode  
 
 ### Hosted Project Link
-[mention your project hosted project link here]
+[https://jslavya.github.io/tritech/]
 
 ---
 
